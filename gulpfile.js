@@ -21,10 +21,11 @@ gulp.task('adoc', function() {
 
 gulp.task('connect', function() {
     connect.server({
-        livereload: true
+        livereload: true,
+        port: 8000
     });
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['docs/*.adoc', 'vars/*.groovy', 'src/**/*.groovy'], ['adoc']);
+  gulp.watch(['docs/*.adoc'], ['adoc']);
 });

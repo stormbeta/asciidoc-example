@@ -1,0 +1,106 @@
+:icons: font
+:source-highlighter: highlightjs
+:highlightjsdir: hljs
+:highlightjs-theme: solarized-light
+
+:toc: left
+
+= AsciiDoc Overview
+
+AsciiDoc is an advanced alternative to markdown
+
+== Setup
+
+=== Ruby-based
+
+****
+Pros::
+* Easier to install system-wide
+* Better compatibility with third-party extensions
+** and wrappers like `asciidoctor-confluence`
+
+Cons::
+* Ruby environments require more setup
+* Lack of easy live-reloading for local editing
+****
+
+.Rendering commands
+[source,bash]
+----
+asciidoctor FILE.adoc
+open FILE.html
+----
+
+==== Configuration files
+
+.Gemfile
+[source,ruby]
+----
+include::Gemfile[]
+----
+
+=== Node.js based
+
+****
+Pros::
+* Easier to bootstrap
+* Much easier to do live-reloads locally
+
+Cons::
+* npm ecosystem is fragile
+* not compatible out-of-the-box with non-js extensions
+** https://github.com/asciidoctor/asciidoctor.js/issues/84[workarounds may exist however]
+****
+
+.Render commands
+[source,bash]
+----
+#Setup
+source nodew #Optional - use if you don't have node locally
+npm install
+
+#Render the document directly
+gulp adoc
+
+#Automatically render and reload the document in a local browser
+gulp watch connect
+open http://localhost:8080/DOCUMENT_PATH.html
+----
+
+==== Configuration files
+
+.package.json
+[source,json]
+----
+include::package.json[]
+----
+
+.gulpfile.js
+[source,javascript]
+----
+include::gulpfile.js[]
+----
+
+== Syntax Highlighting
+
+=== coderay
+
+Pros::
+* Gem-based, minimal configuration needed
+* Works with most backends
+
+Cons::
+* No customization or styling options
+** Built-in coloring isn't the best
+* More limited language support
+
+=== highlightjs
+
+Pros::
+* Themable, with solarized themes available
+* Support for more languages
+
+Cons::
+* Requires more setup
+* Only works with the HTML5 backend since it's javascript
+* Can't easily embed the JS/CSS into the html file
