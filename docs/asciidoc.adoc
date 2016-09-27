@@ -7,7 +7,15 @@
 
 = AsciiDoc Overview
 
-AsciiDoc is an advanced alternative to markdown
+http://asciidoctor.org/docs/what-is-asciidoc/[Why AsciiDoc?]
+
+It should be easy to do things the right way by default - and this applies to technical writing and documentation too!
+
+Just like markdown, it's easy to read and write AsciiDoc using plain text
+
+Unlike markdown however, AsciiDoc supports far more complex formatting rules, and can include snippets of documentation from arbitrary other files, such as source code.
+
+This is important - the closer documentation lives to the code it documents, the more likely it is to be read and kept up-to-date. Tools like javadoc already follow this principle; AsciiDoc makes it easy with any ecosystem.
 
 == Setup
 
@@ -82,6 +90,8 @@ include::gulpfile.js[]
 ----
 
 == Syntax Highlighting
+
+`asciidoctor` has pluggable syntax highlighting:
 
 === coderay
 
