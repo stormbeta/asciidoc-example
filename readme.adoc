@@ -1,0 +1,15 @@
+:source-highlighter: coderay
+
+= AsciiDoc Example Project
+
+== Quick setup
+
+.node.js
+[source,bash]
+----
+$ source nodew
+$ npm install
+$ gulp watch connect
+----
+
+Then point your browser to `http://localhost:8000/docs/asciidoc.html`
