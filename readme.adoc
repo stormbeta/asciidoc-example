@@ -13,3 +13,5 @@ $ gulp watch connect
 ----
 
 Then point your browser to `http://localhost:8000/docs/asciidoc.html`
+
+It should automatically reload when you make changes to `docs/asciidoc.adoc` (or any other *.adoc files in `docs`)
