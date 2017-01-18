@@ -114,3 +114,20 @@ Cons::
 * Requires more setup
 * Only works with the HTML5 backend since it's javascript
 * Can't easily embed the JS/CSS into the html file
+
+== Examples
+
+
+[source,yaml]
+----
+- list:
+    hello: world #<1>
+    world: #<2>
+- entry
+----
+<1> This is a callout
+<2> another callout
+
+
+hello:: world
+gooodbye:: world

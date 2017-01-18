@@ -1,2 +1,2 @@
-gem 'asciidoctor-confluence'
 gem 'coderay'
+gem 'asciidoctor'

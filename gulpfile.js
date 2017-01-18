@@ -27,5 +27,5 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['docs/*.adoc'], ['adoc']);
+  gulp.watch(['docs/*.adoc', 'Gemfile', 'package.json', 'gulpfile.js'], ['adoc']);
 });
