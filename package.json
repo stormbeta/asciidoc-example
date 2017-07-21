@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-asciidoctor": "^1.0.8",
+    "gulp-asciidoctor": "1.5.5-4.3",
     "gulp-connect": "^5.0.0"
   }
 }

@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
-#Wrapper around nvm to properly bootstrap node project environment
+# Wrapper around nvm to properly bootstrap node project environment
 COMMAND_MODE=''
 
-#Used only if nvm isn't found locally
-DEFAULT_NVM_VERSION='0.31.0'
+# Used only if nvm isn't found locally
+DEFAULT_NVM_VERSION='0.33.2'
 
-#Used only if .nvmrc not present
-DEFAULT_NODE_VERSION='4.5.0'
+# Does not override .nvmrc
+DEFAULT_NODE_VERSION='lts/*'
 
-#http://stackoverflow.com/a/2684300
+# http://stackoverflow.com/a/2684300
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   COMMAND_MODE='enabled'
 fi
 
-if [[ -e '.nvmrc' ]]; then
+if [[ -e ".nvmrc" ]]; then
   NODE_VERSION="$(cat .nvmrc)"
 else
   if [[ -z "${NODE_VERSION}" ]]; then
@@ -45,13 +45,15 @@ echo "Using nvm found at '${NVM_SH}'" 1>&2
 #Reset environment if already sourced
 unload-nodew &> /dev/null && true
 
+# TODO: Update nvm if it's old
 if [[ "$(type -t nvm)" != "function" ]]; then
   source "${NVM_SH}" 1>&2
 fi
-if [[ "$(nvm current | sed 's/^.//')" != "${NODE_VERSION}" ]]; then
-  nvm use "${NODE_VERSION}" 1>&2 || nvm install "${NODE_VERSION}" 1>&2
-fi
 
+#if [[ "$(nvm current | sed 's/^.//')" != "${NODE_VERSION}" ]]; then
+  nvm use "${NODE_VERSION}" 1>&2 || nvm install "${NODE_VERSION}" 1>&2
+#fi
+echo "WHAT"
 mkdir -p "$(pwd)/node_modules/.bin"
 
 LOCAL_NODE_BIN="$(pwd)/node_modules/.bin"
