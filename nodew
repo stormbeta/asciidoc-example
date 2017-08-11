@@ -50,10 +50,9 @@ if [[ "$(type -t nvm)" != "function" ]]; then
   source "${NVM_SH}" 1>&2
 fi
 
-#if [[ "$(nvm current | sed 's/^.//')" != "${NODE_VERSION}" ]]; then
+if [[ "$(nvm current | sed 's/^.//')" != "${NODE_VERSION}" ]]; then
   nvm use "${NODE_VERSION}" 1>&2 || nvm install "${NODE_VERSION}" 1>&2
-#fi
-echo "WHAT"
+fi
 mkdir -p "$(pwd)/node_modules/.bin"
 
 LOCAL_NODE_BIN="$(pwd)/node_modules/.bin"
